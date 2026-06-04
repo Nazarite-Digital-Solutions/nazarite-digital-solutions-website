@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Home | Nazarite Digital Solutions | Web Developer in Durban, South Africa</title>
+    <meta name="description" content="Nazarite Digital Solutions creates modern, responsive websites designed to help businesses grow online.">
+    <link rel="canonical" href="https://www.nazaritedigitalsolutions.vercel.app/">
+    
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="Nazarite Digital Solutions">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon-nazarite-digital-solutions.svg">
+    <link rel="preload" as="video" href="hero-page-background-video.webm" type="video/webm">
+    <link rel="stylesheet" href="header-css.css">
+  
+    <style>
+      *, 
+      *::before, 
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      /* ---------- HEADER ---------- */
+      
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5rem;
+        z-index: 200;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        padding: 0 3vw;
+      }
+
+/* ─────────────────────────────────────────────────── HERO PAGE ──────────────────────────────────────────────────── */
+      
+      .hero-page {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        padding-top: 8rem;
+        padding-bottom: 6rem;
+      }
+
+      /* ---------- HERO PAGE WRAPPER ---------- */
+      
+      .hero-page-wrapper {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+      
+      .hero-page-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero-page-video {
+        position: absolute;
+        inset: 0;
+      }
+      
+      .hero-page-image,
+      .hero-page-image img {
+        display: none;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* ---------- HERO PAGE CONTENT ---------- */
+      
+      .hero-page-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        max-width: 960px;
+        text-align: center;
+      }
+
+      /* ---------- NAZARITE DIGITAL SOLUTIONS NAME ---------- */
+      
+      .nazarite-digital-solutions-name {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(2.8rem, 5.5vw, 3rem);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        line-height: 1.1;
+        display: flex;
+        gap: 0.55rem;
+        align-items: baseline;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 2.5rem;
+        animation: flyFromTop 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      @keyframes flyFromTop {
+        from { transform: translateY(-120vh); opacity: 0; }
+        to   { transform: translateY(0);      opacity: 1; }
+      }
+
+       .nazarite-digital-solutions-name-green-words { 
+        color: #006400; 
+      }
+    
+      .nazarite-digital-solutions-name-blue-word { 
+        color: #00006D; 
+      }
+
+      /* ---------- YOUR VISION / CREATED DIGITALLY WORDS ---------- */
+      
+      .nazarite-digital-solutions-slogan {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-page-slogan-line {
+        display: flex;
+        gap: 0.5rem;
+        align-items: baseline;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nazarite-digital-solutions-slogan {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(2.2rem, 5.5vw, 2.4rem);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        line-height: 1.1;
+      }
+
+      .nazarite-digital-solutions-slogan-blue-words { 
+        color: #00006D; 
+      }
+    
+      .nazarite-digital-solutions-slogan-green-words { 
+        color: #006400; 
+      }
+
+      .fly-left {
+        animation: flyFromLeft 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: 0.25s;
+      }
+    
+      .fly-right {
+        animation: flyFromRight 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: 0.25s;
+      }
+
+      .hero-page-slogan-line:nth-child(2) .fly-left,
+      
+      .hero-page-slogan-line:nth-child(2) .fly-right {
+        animation-delay: 0.42s;
+      }
+
+      @keyframes flyFromLeft {
+        from { transform: translateX(-120vw); opacity: 0; }
+        to   { transform: translateX(0);      opacity: 1; }
+      }
+
+      @keyframes flyFromRight {
+        from { transform: translateX(120vw);  opacity: 0; }
+        to   { transform: translateX(0);      opacity: 1; }
+      }
+
+      /* ---------- CUSTOM WEBSITE SOLUTIONS SENTENCE ---------- */
+      
+      .hero-page-custom-website-solutions {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+        font-style: italic;
+        font-weight: 700;
+        color: #00006D;
+        margin-bottom: 2rem;
+        letter-spacing: 0.03em;
+        animation: fadeUp 0.9s 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0);    }
+      }
+
+      /* ---------- HERO PAGE BUTTON ---------- */
+      
+      .hero-page-button {
+        display: inline-block;
+        font-family: Arial, sans-serif;;
+        font-size: 1rem;
+        font-weight: 700;
+        color: white;
+        background-color: #006400;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.75rem 2.2rem;
+        cursor: pointer;
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition: transform 0.2s ease;
+      }
+
+      .hero-page-button:hover {
+        transform: translateY(-5px);
+      }
+      
+      .hero-page-buttons {
+        animation: fadeUp 0.9s 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      /* ---------- SCROLL INDICATOR ---------- */
+      
+      .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.35rem;
+        animation: fadeUp 1s 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+        text-decoration: none;
+      }
+
+      .scroll-indicator-text {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        color: #00006D;
+        font-weight: 700;
+      }
+
+      .scroll-indicator-chevrons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+      }
+
+      .chevron {
+        width: 18px;
+        height: 10px;
+        border-right: 2.5px solid #006400;
+        border-bottom: 2.5px solid #006400;
+        transform: rotate(45deg);
+        animation: bounce 1.4s infinite;
+      }
+
+      .chevron:nth-child(2) { 
+        animation-delay: 0.2s; 
+      }
+
+      @keyframes bounce {
+        0%, 100% { opacity: 0.3; transform: rotate(45deg) translateY(-3px); }
+        50%       { opacity: 1;   transform: rotate(45deg) translateY(3px);  }
+      }
+
+/* ────────────────────────────────────────────────── ABOUT PAGE ──────────────────────────────────────────────────── */
+      
+      .about-page {
+        background-color: #F5F4FF;
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 8rem;
+        padding-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-page-wrapper {
+        width: 88%;
+        max-width: 860px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* ---------- ABOUT PAGE HEADING ---------- */
+      
+      .about-page-heading {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(1.3rem, 3vw, 2.2rem);
+        font-weight: 700;
+        color: #006400;
+        text-align: center;
+        margin-bottom: 2rem;
+        letter-spacing: 0.04em;
+      }
+      
+      .about-page-heading-digital-blue {
+        color: #00006D;
+      }
+
+      /* ---------- ABOUT PAGE BOX ---------- */
+      
+      .about-page-box {
+        width: 100%;
+        border-radius: 0.5rem;
+        background-color: #006400;
+        padding: 2rem 2.2rem 1.8rem;
+        margin-bottom: 2.2rem;
+      }
+
+      .about-page-box p {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 1.2rem;
+        color: white;
+        line-height: 1.85;
+        text-align: left;
+        margin-bottom: 1rem;
+      }
+
+      .about-page-box .tagline {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 1.4rem;
+        font-style: italic;
+        font-weight: 700;
+        color: black;
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      /* ---------- ABOUT PAGE BUTTONS ---------- */
+      
+      .about-page-buttons {
+        display: flex;
+        gap: 1.2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+      }
+
+      .about-page-button {
+        display: inline-block;
+        font-family: Arial, sans-serif;;
+        font-size: 1rem;
+        font-weight: 700;
+        color: white;
+        background-color: #006400;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.75rem 2rem;
+        cursor: pointer;
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition: transform 0.2s ease;
+      }
+
+      .about-page-button:hover {
+        transform: translateY(-5px);
+      }
+
+      /* ---------- COPYRIGHT ---------- */
+      
+      .copyright {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 0.8rem;
+        color: black;
+        font-style: normal;
+        text-align: center;
+      }
+
+/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
+
+      /* ---------- 700px ---------- */
+    
+      @media (max-width: 700px) {
+        .nazarite-digital-solutions-name {
+          font-size: clamp(1.8rem, 6.5vw, 2rem);
+          letter-spacing: 0.04em;
+        }
+
+        .nazarite-digital-solutions-slogan {
+          font-size: clamp(1.4rem, 8vw, 1.6rem);
+        }
+
+        .hero-page-custom-website-solutions { 
+          font-size: 1rem; 
+        }
+
+        .about-page-box { 
+          padding: 1.5rem 1.3rem 1.4rem; 
+        }
+      
+        .about-page-heading { 
+          font-size: 1.2rem; 
+        }
+        
+        .hero-page-video {
+          display: none;
+        }
+
+        .hero-page-image,
+        .hero-page-image img {
+          display: block;
+        }
+      
+        .hero-page-button:hover,
+        .about-page-button:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+
+      /* ---------- 468px ---------- */
+    
+      @media (max-width: 468px) {
+        .hero-page {
+          padding-top: calc(5rem + 3rem);
+          padding-bottom: 5rem;
+        }
+
+        .nazarite-digital-solutions-name {
+          gap: 0.3rem;
+          font-size: clamp(1.8rem, 8vw, 2rem);
+          letter-spacing: 0.03em;
+        }
+
+        .nazarite-digital-solutions-slogan {
+          font-size: clamp(1.2rem, 9.5vw, 1.4rem);
+          letter-spacing: 0.02em;
+        }
+
+        .hero-page-slogan-line { 
+          gap: 0.3rem; 
+        }
+
+        .hero-page-custom-website-solutions {
+          font-size: 0.9rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .hero-page-button,
+        .about-page-button {
+          font-size: 0.9rem;
+          padding: 0.65rem 1.5rem;
+        }
+
+        .about-page-box p { 
+          font-size: 0.9rem; 
+        }
+        
+        .about-page-box .tagline { 
+          font-size: 0.95rem; 
+        }
+        
+        .about-page-heading { 
+          font-size: 1.05rem; 
+        }
+
+        .about-page-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.8rem;
+        }
+
+        .hero-page-button:hover,
+        .about-page-button:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+
+<!-- ──────────────────────────────────────────────────── BODY ───────────────────────────────────────────────────── -->
+  
+  <body>
+
+<!-- ─────────────────────────────────────────────────── HEADER ──────────────────────────────────────────────────── -->
+  
+    <header class="site-header">
+  
+      <nav class="navbar">
+
+        <!-- LOGO -->
+    
+        <div class="navbar-logo">
+          <a href="index.html">
+            <img src="logo-nazarite-digital-solutions.svg" alt="Nazarite Digital Solutions Logo">
+          </a>
+        </div>
+
+      <!-- HAMBURGER -->
+    
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+      </nav>
+
+      <!-- HAMBURGER DROP DOWN MENU -->
+  
+      <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="#about-page">About</a>
+        <a href="projects-page.html">Projects</a>
+        <a href="services-page.html">Services</a>
+        <a href="contact-page.html">Contact</a>
+      </div>
+    
+    </header>
+
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.toggle('is-open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+
+        if (isOpen) {
+          mobileMenu.classList.add('is-open');
+        } else {
+          mobileMenu.classList.remove('is-open');
+        }
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('is-open');
+          hamburger.setAttribute('aria-expanded', false);
+          mobileMenu.classList.remove('is-open');
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+          hamburger.classList.remove('is-open');
+          hamburger.setAttribute('aria-expanded', false);
+          mobileMenu.classList.remove('is-open');
+        }
+      });
+    </script>
+
+<!-- ─────────────────────────────────────────────────── HERO PAGE ───────────────────────────────────────────────── -->
+    
+    <section class="hero-page" id="home">
+
+      <!-- HERO PAGE BACKGROUND / WRAPPER -->
+      
+      <div class="hero-page-wrapper">
+        <video class="hero-page-video" autoplay muted loop playsinline poster="fallback.jpg">
+          <source src="hero-page-background-video.webm" type="video/webm">
+          <source src="hero-page-background-video.mp4" type="video/mp4">
+        </video>
+        
+        <picture class="hero-page-image">
+          <source srcset="hero-page-background.webp" type="image/webp">
+          <img src="hero-page-background.jpg" alt="" aria-hidden="true">
+        </picture>
+      </div>
+
+      <div class="hero-page-content">
+
+      <!-- NAZARITE DIGITAL SOLUTIONS NAME -->
+      
+        <div class="nazarite-digital-solutions-name">
+        <span class="nazarite-digital-solutions-name-green-words">NAZARITE</span>
+        <span class="nazarite-digital-solutions-name-blue-word">DIGITAL</span>
+        <span class="nazarite-digital-solutions-name-green-words">SOLUTIONS</span>
+      </div>
+
+      <!-- YOUR VISION / CREATED DIGITALLY WORDS -->
+        
+      <div class="nazarite-digital-solutions-slogan">
+
+        <div class="hero-page-slogan-line">
+          <span class="nazarite-digital-solutions-slogan-blue-words  fly-left">YOUR</span>
+          <span class="nazarite-digital-solutions-slogan-green-words fly-right">VISION,</span>
+        </div>
+
+        <div class="hero-page-slogan-line">
+          <span class="nazarite-digital-solutions-slogan-blue-words  fly-left">CREATED</span>
+          <span class="nazarite-digital-solutions-slogan-green-words fly-right">DIGITALLY.</span>
+        </div>
+
+      </div>
+
+      <p class="hero-page-custom-website-solutions">Custom Website Solutions</p>
+
+      <div class="hero-page-buttons">
+        <a href="services-page.html" class="hero-page-button">View Services</a>
+      </div>
+
+      </div>
+
+      <!-- SCROLL DOWN INDICATOR -->
+    
+      <a href="#about-page" class="scroll-indicator" aria-label="Scroll to About">
+        <span class="scroll-indicator-text">SCROLL DOWN</span>
+        <div class="scroll-indicator-chevrons">
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+        </div>
+      </a>
+
+    </section>
+
+<!-- ───────────────────────────────────────────────── ABOUT PAGE ────────────────────────────────────────────────── -->
+    
+    <section class="about-page" id="about-page">
+      <div class="about-page-wrapper">
+
+        <h2 class="about-page-heading">ABOUT NAZARITE <span class="about-page-heading-digital-blue">DIGITAL</span> SOLUTIONS</h2>
+
+        <div class="about-page-box">
+          <p>Nazarite Digital Solutions creates modern, high-performing websites designed to help businesses grow online. 
+            From design to development, Nazarite Digital Solutions focuses on creating digital experiences that are 
+            visually engaging, fast, and fully responsive. Every website is created with strategy in mind, combining 
+            design, functionality, and performance to help businesses stand out online.</p>
+          <p class="tagline">Let's create a powerful website together!</p>
+        </div>
+
+        <div class="about-page-buttons">
+          <a href="services-page.html" class="about-page-button">View Services</a>
+          <a href="contact-page.html"  class="about-page-button">Contact Us</a>
+        </div>
+
+        <p class="copyright">&copy; 2026 Nazarite Digital Solutions. All Rights Reserved.</p>
+
+      </div>
+    </section>
+   
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+  </body>
+</html>
