@@ -71,25 +71,28 @@
         height: 100%;
         z-index: 0;
       }
-      
-      .hero-page-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
+         
       .hero-page-video {
         position: absolute;
         inset: 0;
-      }
-      
-      .hero-page-image,
-      .hero-page-image img {
-        display: none;
-        object-fit: cover;
         width: 100%;
         height: 100%;
+        object-fit: cover;
+      }
+      
+      .hero-page-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+
+      .hero-page-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
       }
 
       /* ---------- HERO PAGE CONTENT ---------- */
@@ -243,7 +246,7 @@
       
       .scroll-indicator {
         position: absolute;
-        bottom: 2rem;
+        bottom: 6rem;
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
@@ -424,8 +427,19 @@
           display: none;
         }
 
-        .hero-page-image,
+        .hero-page-image {
+          display: block;
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+
         .hero-page-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center bottom;
           display: block;
         }
       
