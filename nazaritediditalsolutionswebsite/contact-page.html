@@ -13,6 +13,7 @@
     <meta name="author" content="Nazarite Digital Solutions">
     
     <link rel="icon" type="image/svg+xml" href="favicon-nazarite-digital-solutions.svg">
+    <link rel="preload" as="image" href="logo-nazarite-digital-solutions.svg">
     <link rel="stylesheet" href="header-css.css">
     
     <style>
@@ -142,7 +143,9 @@
       .whatsapp-button {
         color: white;
         border: 1.5px solid white;
-        box-shadow: 0 0 4px #25D366, 0 0 8px #25D366, 0 0 12px #25D366;
+        box-shadow: 0 0 4px #25D366, 
+                    0 0 8px #25D366, 
+                    0 0 12px #25D366;
         background-color: #25D366;
       }
       
@@ -252,16 +255,10 @@
       }
 
       /* ---------- CAPTCHA ---------- */
-    
-      .captcha-container {
+  
+      .h-captcha {
         display: flex;
         justify-content: center;
-        width: 100%;
-        margin: 0.5rem 0;
-        padding: 0.5rem;
-        border: 2px solid #006400;
-        border-radius: 0.5rem;
-        background-color: white;
       }
       
       /* ---------- COPYRIGHT ---------- */
@@ -516,12 +513,10 @@
 
           <!-- CAPTCHA -->
         
-          <div class="captcha-container">
             <div class="h-captcha"
              data-captcha="true">
             </div>
-          </div>
-            
+          
           <!-- SUBMIT BUTTON -->
           
           <button type="submit" class="submit-button" id="submitBtn">SUBMIT</button>
