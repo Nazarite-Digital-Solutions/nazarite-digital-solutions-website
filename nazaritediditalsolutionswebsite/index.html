@@ -278,11 +278,12 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 2.5rem;
+        opacity: 0;
+        transform: translateY(-120vh);
         animation: flyFromTop 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
 
       @keyframes flyFromTop {
-        from { transform: translateY(-120vh); opacity: 0; }
         to   { transform: translateY(0);      opacity: 1; }
       }
 
