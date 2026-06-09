@@ -30,7 +30,7 @@
 
       html { font-size: 16px; }
 
-      body { background: linear-gradient(to bottom, white, #00006D); min-height: 100vh; padding-top: 5rem; }
+      body { background: white; min-height: 100vh; padding-top: 5rem; }
       
 /* ───────────────────────────────────────────────────── HEADER ───────────────────────────────────────────────────── */
 
@@ -253,6 +253,13 @@
         padding: 1.75rem 2rem;
         background-color: white;
       }
+      
+      .agreement-terms-and-conditions-box {
+        border: 3px solid #00006D;
+        border-radius: 0.5rem;
+        padding: 1.75rem 2rem;
+        background-color: white;
+      }
 
       .terms-and-conditions-box-heading {
         font-family: Georgia, 'Times New Roman', serif;
@@ -268,6 +275,14 @@
         font-size: 1rem;
         color: black;
         text-align: left;
+        line-height: 1.65;
+      }
+      
+      .agreement-terms-and-conditions-box-body {
+        font-family: Arial, sans-serif;
+        font-size: 1rem;
+        color: black;
+        text-align: center;
         line-height: 1.65;
       }
 
@@ -333,7 +348,7 @@
         text-align: center;
         font-family: Georgia, 'Times New Roman', serif;
         font-size: 0.8rem;
-        color: white;
+        color: black;
         padding-bottom: 1rem;
       }
       
@@ -346,7 +361,8 @@
           font-size: 1.9rem;
         }
 
-        .terms-and-conditions-box {
+        .terms-and-conditions-box,
+        .agreement-terms-and-conditions-box {
           padding: 1.5rem 1.4rem;
         }
 
@@ -354,7 +370,8 @@
           font-size: 1.4rem;
         }
 
-        .terms-and-conditions-box-body {
+        .terms-and-conditions-box-body,
+        .agreement-terms-and-conditions-box-body {
           font-size: 0.9rem;
         }
 
@@ -384,7 +401,8 @@
           margin-top: 2rem;
         }
 
-        .terms-and-conditions-box {
+        .terms-and-conditions-box,
+        .agreement-terms-and-conditions-box {
           padding: 1.25rem 1rem;
         }
 
@@ -392,7 +410,8 @@
           font-size: 1.2rem;
         }
 
-        .terms-and-conditions-box-body {
+        .terms-and-conditions-box-body,
+        .agreement-terms-and-conditions-box-body {
           font-size: 0.9rem;
         }
 
@@ -550,9 +569,9 @@
         
         <!-- BOX 3 -->
         
-        <div class="terms-and-conditions-box">
+        <div class="agreement-terms-and-conditions-box">
           <p class="terms-and-conditions-box-agreement-heading">Agreement</p>
-          <p class="terms-and-conditions-box-body">By purchasing or using our services, you agree to these 
+          <p class="agreement-terms-and-conditions-box-body">By purchasing or using our services, you agree to these 
             Terms &amp; Conditions.</p>
         </div>
           
