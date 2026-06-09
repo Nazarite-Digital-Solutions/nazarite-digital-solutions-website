@@ -28,7 +28,7 @@
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      body { background: linear-gradient(to bottom, white, #00006D); padding-top: 5rem; }
+      body { background: white; padding-top: 5rem; }
 
 /* ───────────────────────────────────────────────────── HEADER ───────────────────────────────────────────────────── */
 
@@ -236,7 +236,7 @@
       /* ---------- SERVICE CARDS ---------- */
       
       .service-card {
-        background: #DAE7E9;
+        background: #CCC8E8;
         border: 1px solid #006400;
         border-radius: 0.5rem;
         box-shadow: 0 0 10px #00006D, 
@@ -246,7 +246,7 @@
       }
       
       .professional-service-card {
-        background: #DAE7E9;
+        background: #D1F0D1;
         border: 1px solid #00006D;
         border-radius: 0.5rem;
         box-shadow: 0 0 10px #006400, 
@@ -256,16 +256,16 @@
       }
       
       .hosting-service-card {
-        background: #DAE7E9;
-        border: 2px solid #00006D;
+        background: white;
+        border: 3px solid #00006D;
         border-radius: 0.5rem;
         box-shadow: none;
         padding: 1.8rem 2rem;
       }
       
       .need-something-different-card {
-        background: #DAE7E9;
-        border: 2px solid #006400;
+        background: white;
+        border: 3px solid #006400;
         border-radius: 0.5rem;
         box-shadow: none;
         padding: 1.8rem 2rem;
@@ -275,6 +275,24 @@
         font-family: Georgia, 'Times New Roman', serif;
         font-weight: 700;
         color: #006400;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      
+      .professional-service-card-heading {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-weight: 700;
+        color: #00006D;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      
+      .hosting-management-service-card-heading {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-weight: 700;
+        color: #00006D;
         font-size: 1.4rem;
         margin-bottom: 1rem;
         text-align: center;
@@ -326,6 +344,25 @@
       .service-card-terms-and-conditions a:hover {
         opacity: 0.7;
       }
+      
+      .professional-service-card-terms-and-conditions {
+        font-family: Arial, sans-serif;
+        color: black;
+        font-size: 1rem;
+        text-align: center;
+        border-top: 1px solid black;
+        padding-top: 1rem;
+      }
+      
+      .professional-service-card-terms-and-conditions a {
+        color: #00006D;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+      
+      .professional-service-card-terms-and-conditions a:hover {
+        opacity: 0.7;
+      }
 
       /* ---------- FIRST ROW WITH 2 BOXES ---------- */
       
@@ -363,7 +400,7 @@
       .service-bonus-label {
         font-family: Arial, sans-serif;
         font-weight: 700;
-        color: #006400;
+        color: #00006D;
         text-align: center;
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
@@ -441,7 +478,7 @@
         text-align: center;
         font-family: Georgia, 'Times New Roman', serif;
         font-size: 0.8rem;
-        color: white;
+        color: black;
         margin-bottom: 3rem;
       }
 
@@ -491,7 +528,9 @@
           padding: 1.2rem;
         }
 
-        .service-card-heading {
+        .service-card-heading,
+        .professional-service-card-heading,
+        .hosting-management-service-card-heading {
           font-size: 1.1rem;
         }
 
@@ -638,7 +677,7 @@
       
       <div class="row-two">
         <div class="professional-service-card">
-          <h2 class="service-card-heading">Professional Website Design</h2>
+          <h2 class="professional-service-card-heading">Professional Website Design</h2>
           <p class="service-card-price">From R9200 once-off (South African clients)</p>
           <p class="service-card-price">From £420 once-off (United Kingdom clients)</p>
           <ul>
@@ -665,7 +704,7 @@
             <li>Monthly website performance report (website speed and visitor statistics)</li>
             <li>Priority support for small updates</li>
           </ul>
-          <p class="service-card-terms-and-conditions">A 50% non-refundable deposit is required to commence work. The 
+          <p class="professional-service-card-terms-and-conditions">A 50% non-refundable deposit is required to commence work. The 
             remaining balance is payable upon completion prior to launch. By proceeding, you agree to our 
             <a href="terms-and-conditions-page.html">Terms & Conditions</a>.
           </p>
@@ -676,7 +715,7 @@
     
       <div class="row-two">
         <div class="hosting-service-card">
-          <h2 class="service-card-heading">Hosting Management (optional add-on)</h2>
+          <h2 class="hosting-management-service-card-heading">Hosting Management (optional add-on)</h2>
           <p class="hosting-text">
             Hosting management can be included depending on the client's requirements.
             Pricing may vary based on hosting provider costs and website usage (traffic, storage, and features).
