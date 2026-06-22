@@ -22,12 +22,6 @@
     <link rel="alternate" hreflang="en"
       href="https://www.nazaritedigitalsolutions.com/services-page" />
 
-    <link rel="alternate" hreflang="en-gb"
-      href="https://www.nazaritedigitalsolutions.co.uk/services-page" />
-
-    <link rel="alternate" hreflang="en-za"
-      href="https://www.nazaritedigitalsolutions.co.za/services-page" />
-
     <link rel="alternate" hreflang="x-default"
       href="https://www.nazaritedigitalsolutions.com/services-page" />
     
@@ -621,7 +615,7 @@
         
         <div class="service-card">
           <h2 class="service-card-heading">Starter Website Design</h2>
-          <p class="service-card-price">From $300 once-off</p>
+          <p class="service-card-price">From <span id="starter-price">$300</span> once-off</p>
           <ul>
             <li>1–3 page responsive website (mobile &amp; tablet friendly)</li>
             <li>Domain setup assistance (DNS + hosting connection guidance)</li>
@@ -639,7 +633,7 @@
         
         <div class="service-card">
           <h2 class="service-card-heading">Basic Maintenance Package</h2>
-          <p class="service-card-price">From $40 per month</p>
+          <p class="service-card-price">From <span id="maintenance-price">$40</span> per month</p>
           <ul>
             <li>Up to 4 small content edits per month (text/images)</li>
             <li>Minor layout fixes (if something breaks or shifts)</li>
@@ -657,10 +651,10 @@
     
         <div class="professional-service-card">
           <h2 class="professional-service-card-heading">Professional Website Design</h2>
-          <p class="service-card-price">From $600 once-off</p>
+          <p class="service-card-price">From <span id="professional-price">$600</span> once-off</p>
           <ul>
             <li>Custom 4-8 page responsive website (mobile &amp; tablet optimised)</li>
-            <li>Need more pages? Additional pages available at $100 per page</li>
+            <li>Need more pages? Additional pages available at <span id="extra-page-price">$100</span> per page</li>
             <li>Domain registration included for the first year (.com or equivalent standard domain)</li>
             <li>Domain renewal fees after the first year are the client's responsibility</li>
             <li>On-page SEO setup (meta titles, descriptions, image alt tags)</li>
@@ -720,6 +714,39 @@
       <p class="copyright">&copy; 2026 Nazarite Digital Solutions. All Rights Reserved.</p>
 
     </main>
+    
+    <script>
+      async function updatePricing() {
+      const response = await fetch(
+        "https://round-feather-620f.nazaritedigitalsolutions.workers.dev/"
+      );
+
+      const data = await response.json();
+
+      if (data.currency === "ZAR") {
+        document.getElementById("starter-price").textContent = "R2500";
+        document.getElementById("maintenance-price").textContent = "R400";
+        document.getElementById("professional-price").textContent = "R6000";
+        document.getElementById("extra-page-price").textContent = "R100";
+      }
+
+      else if (data.currency === "GBP") {
+        document.getElementById("starter-price").textContent = "£300";
+        document.getElementById("maintenance-price").textContent = "£40";
+        document.getElementById("professional-price").textContent = "£600";
+        document.getElementById("extra-page-price").textContent = "£100";
+      }
+
+      else {
+        document.getElementById("starter-price").textContent = "$300";
+        document.getElementById("maintenance-price").textContent = "$40";
+        document.getElementById("professional-price").textContent = "$600";
+        document.getElementById("extra-page-price").textContent = "$100";
+        }
+      }
+
+      updatePricing();
+    </script>
 
   </body>
 </html>
