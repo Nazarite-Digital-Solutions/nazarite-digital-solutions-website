@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>
-      function getCurrencyFromCookie() {
-      const match = document.cookie.match(/currency=(ZAR|GBP|USD)/);
-      return match ? match[1] : null;
-      }
-    </script>
-    
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
@@ -244,11 +237,9 @@
 
       /* ---------- SERVICE CARDS ---------- */
       
-      #starter-price,
-      #maintenance-price,
-      #professional-price,
-      #extra-page-price {
-        visibility: hidden;
+      .price-hidden {
+        opacity: 0;
+        transition: opacity 0.2s ease;
       }
       
       .service-card {
@@ -629,7 +620,7 @@
         
         <div class="service-card">
           <h2 class="service-card-heading">Starter Website Design</h2>
-          <p class="service-card-price">From <span id="starter-price">$300</span> once-off</p>
+          <p class="service-card-price">From <span id="starter-price" class="price-hidden">$300</span> once-off</p>
           <ul>
             <li>1–3 page responsive website (mobile &amp; tablet friendly)</li>
             <li>Domain setup assistance (DNS + hosting connection guidance)</li>
@@ -647,7 +638,7 @@
         
         <div class="service-card">
           <h2 class="service-card-heading">Basic Maintenance Package</h2>
-          <p class="service-card-price">From <span id="maintenance-price">$40</span> per month</p>
+          <p class="service-card-price">From <span id="maintenance-price" class="price-hidden">$40</span> per month</p>
           <ul>
             <li>Up to 4 small content edits per month (text/images)</li>
             <li>Minor layout fixes (if something breaks or shifts)</li>
@@ -665,10 +656,10 @@
     
         <div class="professional-service-card">
           <h2 class="professional-service-card-heading">Professional Website Design</h2>
-          <p class="service-card-price">From <span id="professional-price">$600</span> once-off</p>
+          <p class="service-card-price">From <span id="professional-price" class="price-hidden">$600</span> once-off</p>
           <ul>
             <li>Custom 4-8 page responsive website (mobile &amp; tablet optimised)</li>
-            <li>Need more pages? Additional pages available at <span id="extra-page-price">$100</span> per page</li>
+            <li>Need more pages? Additional pages available at <span id="extra-page-price" class="price-hidden">$100</span> per page</li>
             <li>Domain registration included for the first year (.com or equivalent standard domain)</li>
             <li>Domain renewal fees after the first year are the client's responsibility</li>
             <li>On-page SEO setup (meta titles, descriptions, image alt tags)</li>
@@ -730,12 +721,12 @@
     </main>
     
     <script>
-  // ----------------------------
-  // 1. Get currency from Worker
-  // ----------------------------
       async function getCurrency() {
         try {
           const res = await fetch("https://currency.nazaritedigitalsolutions.workers.dev/");
+          
+          if (!res.ok) throw new Error("Worker response not OK");
+          
           const data = await res.json();
 
           return data.currency || "USD";
@@ -745,34 +736,27 @@
         }
       }
 
-  // ----------------------------
-  // 2. Update prices safely
-  // ----------------------------
       function updatePricing(currency) {
+        const starter = document.getElementById("starter-price");
+        const maintenance = document.getElementById("maintenance-price");
+        const professional = document.getElementById("professional-price");
+        const extra = document.getElementById("extra-page-price");
 
-        if (currency === "ZAR") {
-          document.getElementById("starter-price").textContent = "R2500";
-          document.getElementById("maintenance-price").textContent = "R400";
-          document.getElementById("professional-price").textContent = "R6000";
-          document.getElementById("extra-page-price").textContent = "R100";
+        let values = {
+          USD: ["$300", "$40", "$600", "$100"],
+          GBP: ["£300", "£40", "£600", "£100"],
+          ZAR: ["R2500", "R400", "R6000", "R100"]
+        };
 
-        } else if (currency === "GBP") {
-          document.getElementById("starter-price").textContent = "£300";
-          document.getElementById("maintenance-price").textContent = "£40";
-          document.getElementById("professional-price").textContent = "£600";
-          document.getElementById("extra-page-price").textContent = "£100";
+        const v = values[currency] || values.USD;
 
-        } else {
-          document.getElementById("starter-price").textContent = "$300";
-          document.getElementById("maintenance-price").textContent = "$40";
-          document.getElementById("professional-price").textContent = "$600";
-          document.getElementById("extra-page-price").textContent = "$100";
-        }
+        starter.textContent = v[0];
+        maintenance.textContent = v[1];
+        professional.textContent = v[2];
+        extra.textContent = v[3];
 
-          document.querySelectorAll(
-            "#starter-price, #maintenance-price, #professional-price, #extra-page-price"
-          ).forEach(el => {
-          el.style.visibility = "visible";
+        [starter, maintenance, professional, extra].forEach(el => {
+        el.classList.remove("price-hidden");
         });
       }
 
