@@ -734,6 +734,13 @@
     
     <script>
       
+      fetch("https://your-worker-url")
+  .then(res => res.json())
+  .then(data => {
+    window.__CURRENCY = data.currency;
+    updatePricing();
+  });
+      
  function updatePricing() {
   const currency = window.__CURRENCY || "USD";
 
