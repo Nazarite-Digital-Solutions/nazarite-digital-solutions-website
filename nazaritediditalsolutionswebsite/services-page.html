@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <script>
-  function getCurrencyFromCookie() {
-    const match = document.cookie.match(/currency=(ZAR|GBP|USD)/);
-    return match ? match[1] : null;
-  }
-
-  
-</script>
+      function getCurrencyFromCookie() {
+      const match = document.cookie.match(/currency=(ZAR|GBP|USD)/);
+      return match ? match[1] : null;
+      }
+    </script>
     
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -248,11 +245,11 @@
       /* ---------- SERVICE CARDS ---------- */
       
       #starter-price,
-#maintenance-price,
-#professional-price,
-#extra-page-price {
-  visibility: hidden;
-}
+      #maintenance-price,
+      #professional-price,
+      #extra-page-price {
+        visibility: hidden;
+      }
       
       .service-card {
         background: #E4E4ED;
@@ -732,62 +729,58 @@
 
     </main>
     
- <script>
+    <script>
   // ----------------------------
   // 1. Get currency from Worker
   // ----------------------------
-  async function getCurrency() {
-    try {
-      const res = await fetch("https://currency.nazaritedigitalsolutions.workers.dev/");
-      const data = await res.json();
+      async function getCurrency() {
+        try {
+          const res = await fetch("https://currency.nazaritedigitalsolutions.workers.dev/");
+          const data = await res.json();
 
-      return data.currency || "USD";
-    } catch (err) {
-      console.log("Currency worker failed:", err);
-      return "USD";
-    }
-  }
+          return data.currency || "USD";
+        } catch (err) {
+          console.log("Currency worker failed:", err);
+          return "USD";
+        }
+      }
 
   // ----------------------------
   // 2. Update prices safely
   // ----------------------------
-  function updatePricing(currency) {
+      function updatePricing(currency) {
 
-    if (currency === "ZAR") {
-      document.getElementById("starter-price").textContent = "R2500";
-      document.getElementById("maintenance-price").textContent = "R400";
-      document.getElementById("professional-price").textContent = "R6000";
-      document.getElementById("extra-page-price").textContent = "R100";
+        if (currency === "ZAR") {
+          document.getElementById("starter-price").textContent = "R2500";
+          document.getElementById("maintenance-price").textContent = "R400";
+          document.getElementById("professional-price").textContent = "R6000";
+          document.getElementById("extra-page-price").textContent = "R100";
 
-    } else if (currency === "GBP") {
-      document.getElementById("starter-price").textContent = "£300";
-      document.getElementById("maintenance-price").textContent = "£40";
-      document.getElementById("professional-price").textContent = "£600";
-      document.getElementById("extra-page-price").textContent = "£100";
+        } else if (currency === "GBP") {
+          document.getElementById("starter-price").textContent = "£300";
+          document.getElementById("maintenance-price").textContent = "£40";
+          document.getElementById("professional-price").textContent = "£600";
+          document.getElementById("extra-page-price").textContent = "£100";
 
-    } else {
-      document.getElementById("starter-price").textContent = "$300";
-      document.getElementById("maintenance-price").textContent = "$40";
-      document.getElementById("professional-price").textContent = "$600";
-      document.getElementById("extra-page-price").textContent = "$100";
-    }
+        } else {
+          document.getElementById("starter-price").textContent = "$300";
+          document.getElementById("maintenance-price").textContent = "$40";
+          document.getElementById("professional-price").textContent = "$600";
+          document.getElementById("extra-page-price").textContent = "$100";
+        }
 
-    // show prices AFTER update
-    document.querySelectorAll(
-      "#starter-price, #maintenance-price, #professional-price, #extra-page-price"
-    ).forEach(el => {
-      el.style.visibility = "visible";
-    });
-  }
+          document.querySelectorAll(
+            "#starter-price, #maintenance-price, #professional-price, #extra-page-price"
+          ).forEach(el => {
+          el.style.visibility = "visible";
+        });
+      }
 
-  // ----------------------------
-  // 3. Run everything safely
-  // ----------------------------
-  (async function initCurrency() {
-    const currency = await getCurrency();
-    updatePricing(currency);
-  })();
-</script>
+      (async function initCurrency() {
+        const currency = await getCurrency();
+        updatePricing(currency);
+      })();
+    </script>
 
   </body>
 </html>
