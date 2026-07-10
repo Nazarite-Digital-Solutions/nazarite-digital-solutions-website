@@ -1,4 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="white"></rect>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="#006400">N</text>
+  <rect width="64" height="64" fill="white"/>
+  <text
+    x="51%"
+    y="52%"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Georgia, serif"
+    font-size="44"
+    font-weight="700"
+    fill="#006400">
+    N
+  </text>
 </svg>
