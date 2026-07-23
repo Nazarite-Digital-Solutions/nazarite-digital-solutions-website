@@ -1641,12 +1641,9 @@
         });
       }
 
-      window.addEventListener("load", async () => {
-  const currency = await getCurrency();
-  updatePricing(currency);
-
-  const video = document.querySelector(".hero-page-video");
-  video.load();
+     window.addEventListener("load", async () => {
+    const currency = await getCurrency();
+    updatePricing(currency);
 });
     </script>
 
