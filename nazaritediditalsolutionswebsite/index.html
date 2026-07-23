@@ -1202,7 +1202,7 @@
     
     <section class="hero" id="hero">
 
-      <video class="hero-page-video" autoplay muted loop playsinline preload="metadata" width="1366" height="720">
+      <video class="hero-page-video" autoplay muted loop playsinline preload="none" width="1366" height="720">
         <source src="hero-page-background-video.webm" type="video/webm">
         <source src="hero-page-background-video.mp4" type="video/mp4">
       </video>
@@ -1543,7 +1543,7 @@
           
             <button type="submit" class="submit-button" id="submitBtn">SUBMIT</button>
 
-            <audio id="submitSound" src="submit-sound.mp3" preload="auto"></audio>
+            <audio id="submitSound" src="submit-sound.mp3" preload="none"></audio>
           </form>
         
         </div>
@@ -1641,10 +1641,13 @@
         });
       }
 
-      (async function initCurrency() {
-        const currency = await getCurrency();
-        updatePricing(currency);
-      })();
+      window.addEventListener("load", async () => {
+  const currency = await getCurrency();
+  updatePricing(currency);
+
+  const video = document.querySelector(".hero-page-video");
+  video.load();
+});
     </script>
 
   </body>
